@@ -1,0 +1,32 @@
+1. BAIXE O MT MANAGER PELO APTOIDE
+
+2. APÓS BAIXAR, ABRA classes.dex DO WHATSAPP E PESQUISE POR "à\\" (SEM AS ASPAS)
+
+3. PROCURE PELO MÉTODO A00 E COLE O CÓDIGO ABAIXO NO LUGAR
+
+.method public static A00(LX/01X;J)Ljava/lang/String;
+    .registers 7
+
+    new-instance v1, Ljava/text/SimpleDateFormat;
+
+    const-string v2, "HH:mm:ss:SS"
+
+    sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
+
+    invoke-direct {v1, v2, v3}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+
+    new-instance v2, Ljava/util/Date;
+
+    invoke-direct {v2, p1, p2}, Ljava/util/Date;-><init>(J)V
+
+    invoke-virtual {v1, v2}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+CASO NÃO QUEIRA QUE OS MILLI SEGUNDOS APAREÇAM, APAGUE OS 2 "S" MAIÚSCULO NO FINAL E COLOQUE SOMENTE "HH:mm:ss"
+
+
+https://youtube.com/igorlb
